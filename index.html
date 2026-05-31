@@ -7,25 +7,26 @@
     <style>
         body { margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family: 'Segoe UI', sans-serif; }
         
-        /* Üst Menü Düzeni */
+        /* Üst Menü */
         header { 
             position: fixed; top: 0; width: 100%; background: rgba(0, 0, 0, 0.9); 
             padding: 15px 0; display: flex; justify-content: center; align-items: center; 
             z-index: 1000; border-bottom: 1px solid #222;
         }
-        .nav-links { display: flex; align-items: center; gap: 25px; }
-        header a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; width: 80%; }
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        header a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; }
         header a:hover { color: #00a8ff; }
         
-        /* Giriş Yap Butonu */
+        /* Giriş Yap Butonu (Özel Stil) */
         .btn-giris { 
-            background: #00a8ff; padding: 8px 20px; border-radius: 50px; 
-            color: white !important; font-weight: bold; margin-left: 20px !important;
+            background: #00a8ff; padding: 10px 25px; border-radius: 50px; 
+            color: white !important; font-weight: bold; 
         }
 
         /* Ana İçerik */
         .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        h1 { font-size: 3.5rem; margin-bottom: 15px; }
         
         /* Yuvarlak Butonlar */
         .button-group { margin-top: 25px; display: flex; gap: 15px; }
@@ -43,11 +44,13 @@
     <div id="copy-notification">IP kopyalandı!</div>
 
     <header>
-        <div class="nav-links">
-            <a href="#ana-sayfa">Anasayfa</a>
-            <a href="#hakkimizda">Hakkımızda</a>
-            <a href="#kurallar">Kurallar</a>
-            <a href="#market">Market</a>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#ana-sayfa">Anasayfa</a>
+                <a href="#hakkimizda">Hakkımızda</a>
+                <a href="#kurallar">Kurallar</a>
+                <a href="#market">Market</a>
+            </div>
             <a href="#" class="btn-giris">Giriş Yap ></a>
         </div>
     </header>
@@ -57,4 +60,18 @@
         <p>WaterNetwork, oyunculara en yüksek performansı sunar.</p>
         <div class="button-group">
             <button class="btn-main btn-oyna" onclick="ipKopyala()">Şimdi Oyna</button>
-            <a href="#" class="btn
+            <a href="#" class="btn-main btn-kayit">Kayıt Ol</a>
+        </div>
+    </section>
+
+    <script>
+        function ipKopyala() {
+            navigator.clipboard.writeText("play.waternetwork.com").then(() => {
+                const bildirim = document.getElementById("copy-notification");
+                bildirim.style.display = "block";
+                setTimeout(() => { bildirim.style.display = "none"; }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
