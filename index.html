@@ -12,7 +12,7 @@
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0f111a;
+            background-color: #000000; /* GENEL ARKA PLAN SİYAH YAPILDI */
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -21,7 +21,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 17, 26, 0.95);
+            background: rgba(0, 0, 0, 0.95); /* MENÜ ARKA PLANI SİYAH YAPILDI */
             padding: 20px 0;
             text-align: center;
             z-index: 1000;
@@ -52,11 +52,14 @@
             box-sizing: border-box;
         }
         #ana-sayfa { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607988795691-3d0147b43231?q=80') no-repeat center center/cover; 
+            /* Einstein görselinin arkasındaki koyuluk siyah tonuna çekildi */
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1607988795691-3d0147b43231?q=80') no-repeat center center/cover; 
         }
-        #hakkimizda { background-color: #161925; }
-        #kurallar { background-color: #1f2335; }
-        #market { background-color: #161925; }
+        
+        /* DİĞER BÜTÜN BÖLÜMLERİN ARKA PLANLARI SİYAH YAPILDI */
+        #hakkimizda { background-color: #000000; }
+        #kurallar { background-color: #000000; }
+        #market { background-color: #000000; }
 
         h1 { font-size: 3.5rem; margin-bottom: 10px; color: #00a8ff; }
         h2 { font-size: 2.5rem; color: #00a8ff; margin-bottom: 20px; }
