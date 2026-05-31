@@ -1,1 +1,67 @@
-<a href="register.html">Kayıt Ol</a>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol | WaterNetwork</title>
+    <style>
+        /* Tasarım Stilleri */
+        body { margin: 0; padding: 0; background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; overflow: hidden; }
+        
+        /* Sol Taraf: Form */
+        .left-panel { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 80px; }
+        h1 { color: #00a8ff; margin-bottom: 5px; font-size: 2.5rem; }
+        .desc { margin-bottom: 30px; opacity: 0.8; }
+        input { 
+            padding: 15px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #333; 
+            background: #111; color: white; width: 100%; box-sizing: border-box; outline: none;
+        }
+        input:focus { border-color: #00a8ff; }
+        .btn-register { 
+            background: #00a8ff; color: white; border: none; padding: 15px; 
+            border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .btn-register:hover { background: #008ecc; }
+        
+        /* Sağ Taraf: Marka */
+        .right-panel { 
+            flex: 1; background: #050505; display: flex; justify-content: center; align-items: center;
+            border-left: 1px solid #222;
+        }
+        .logo-text { font-size: 4rem; font-weight: bold; color: #00a8ff; }
+        
+        /* Link Stilleri */
+        a { color: #00a8ff; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) { 
+            body { flex-direction: column; overflow: auto; }
+            .right-panel { display: none; }
+            .left-panel { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-panel">
+        <h1>KAYIT OL</h1>
+        <p class="desc">Sunucumuza katılmak için hemen bir hesap oluştur.</p>
+        
+        <input type="text" placeholder="Kullanıcı Adı">
+        <input type="email" placeholder="E-Posta Adresi">
+        <input type="password" placeholder="Şifre">
+        <input type="password" placeholder="Şifre (Tekrar)">
+        
+        <button class="btn-register">Kayıt Ol</button>
+        
+        <p style="margin-top: 20px;">Zaten hesabın var mı? <a href="login.html">Giriş Yap</a></p>
+        <p><a href="index.html">← Ana Sayfaya Dön</a></p>
+    </div>
+
+    <div class="right-panel">
+        <div class="logo-text">WaterNetwork</div>
+    </div>
+
+</body>
+</html>
