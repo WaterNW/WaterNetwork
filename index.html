@@ -7,42 +7,40 @@
     <style>
         body { margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family: 'Segoe UI', sans-serif; }
         
-        /* Butonlar İçin Yuvarlatma */
-        .btn-main {
-            padding: 15px 40px;
-            border-radius: 50px; /* Köşeleri tam yuvarlak yapar */
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-            display: inline-block;
-        }
+        /* Üst Menü */
+        header { position: fixed; top: 0; width: 100%; background: rgba(0, 0, 0, 0.9); padding: 20px 0; display: flex; justify-content: center; z-index: 1000; }
+        header a { color: #ffffff; text-decoration: none; margin: 0 20px; font-weight: bold; }
+        header a:hover { color: #00a8ff; }
 
+        /* Ana İçerik */
+        .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        
+        /* Yuvarlak Butonlar */
+        .button-group { margin-top: 20px; display: flex; gap: 15px; }
+        .btn-main { padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; transition: 0.3s; }
         .btn-oyna { background: #00a8ff; color: #fff; }
         .btn-kayit { background: #1a1a1a; color: #fff; border: 1px solid #333; }
-        .btn-main:hover { transform: scale(1.05); opacity: 0.9; }
+        .btn-main:hover { transform: scale(1.1); opacity: 0.9; }
 
-        /* Diğer Alanlar (Görselinizdeki yapıya uygun) */
-        .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .button-group { margin-top: 30px; display: flex; gap: 15px; }
-        
-        #copy-notification {
-            display: none; position: fixed; top: 100px; left: 50%;
-            transform: translateX(-50%); background-color: #00a8ff;
-            color: white; padding: 15px 30px; border-radius: 50px;
-            font-weight: bold; z-index: 9999;
-        }
+        /* Bildirim */
+        #copy-notification { display: none; position: fixed; top: 100px; left: 50%; transform: translateX(-50%); background: #00a8ff; color: white; padding: 15px 30px; border-radius: 50px; font-weight: bold; z-index: 9999; }
     </style>
 </head>
 <body>
 
     <div id="copy-notification">IP kopyalandı!</div>
 
+    <header>
+        <a href="#ana-sayfa">Anasayfa</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#kurallar">Kurallar</a>
+        <a href="#market">Market</a>
+    </header>
+
     <section id="ana-sayfa" class="section">
-        <h1>WaterNetwork'e Katılın!</h1>
-        <p>WaterNetwork, oyunculara en yüksek performansı sunar.</p>
-        
+        <h1>WaterNetwork</h1>
+        <p>En iyi Minecraft deneyimi için aramıza katılın.</p>
         <div class="button-group">
             <button class="btn-main btn-oyna" onclick="ipKopyala()">Şimdi Oyna</button>
             <a href="#" class="btn-main btn-kayit">Kayıt Ol</a>
@@ -51,8 +49,7 @@
 
     <script>
         function ipKopyala() {
-            const ip = "play.waternetwork.com";
-            navigator.clipboard.writeText(ip).then(() => {
+            navigator.clipboard.writeText("play.waternetwork.com").then(() => {
                 const bildirim = document.getElementById("copy-notification");
                 bildirim.style.display = "block";
                 setTimeout(() => { bildirim.style.display = "none"; }, 2000);
