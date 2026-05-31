@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaterNetwork | Minecraft Sunucusu</title>
     <style>
-        html {
-            scroll-behavior: smooth; /* Butonlara basınca sayfayı aşağı akıcı şekilde kaydırır */
-        }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
@@ -16,96 +14,95 @@
             color: #ffffff;
             overflow-x: hidden;
         }
-        /* Sabit Üst Menü */
+
+        /* Üst Menü Düzeni */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.95);
             padding: 20px 0;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             z-index: 1000;
-            border-bottom: 2px solid #00a8ff;
+            border-bottom: 1px solid #222;
         }
+        .nav-links { display: flex; align-items: center; }
         header a {
-            color: #00a8ff;
-            text-decoration: none;
-            margin: 0 25px;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-        header a:hover {
             color: #ffffff;
-            text-shadow: 0 0 10px #00a8ff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: 0.3s;
         }
-        /* Tam Ekran Bölümler */
+        header a:hover { color: #00a8ff; }
+        
+        .btn-giris {
+            background: #00a8ff;
+            padding: 10px 25px;
+            border-radius: 5px;
+            color: white !important;
+            font-weight: bold;
+            margin-left: 30px !important;
+        }
+
+        /* Ana Bölüm */
         .section {
-            height: 100vh; /* Her bölüm ekranın tamamını kaplar */
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 20px;
-            box-sizing: border-box;
         }
-        
-        /* FOTOĞRAF BURADAN KALDIRILDI VE DÜZ SİYAH YAPILDI */
-        #ana-sayfa { 
-            background-color: #000000; 
-        }
-        
-        #hakkimizda { background-color: #000000; }
-        #kurallar { background-color: #000000; }
-        #market { background-color: #000000; }
 
-        h1 { font-size: 3.5rem; margin-bottom: 10px; color: #00a8ff; }
-        h2 { font-size: 2.5rem; color: #00a8ff; margin-bottom: 20px; }
-        p { font-size: 1.3rem; max-width: 700px; line-height: 1.6; color: #cdced6; }
-        
-        .ip-kutusu {
-            background: #00a8ff;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 30px;
+        h1 { font-size: 4rem; margin-bottom: 10px; }
+        p { font-size: 1.3rem; max-width: 600px; color: #b0b0b0; }
+
+        /* Buton Grubu */
+        .button-group { margin-top: 30px; display: flex; gap: 15px; }
+        .btn-main {
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 25px;
-            display: inline-block;
+            transition: 0.3s;
         }
+        .btn-oyna { background: #00a8ff; color: #fff; }
+        .btn-kayit { background: #1a1a1a; color: #fff; border: 1px solid #333; }
+        .btn-main:hover { opacity: 0.8; transform: scale(1.05); }
+
+        #hakkimizda, #kurallar, #market { background: #050505; }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#ana-sayfa">Ana Sayfa</a>
-        <a href="#hakkimizda">Hakkımızda</a>
-        <a href="#kurallar">Kurallar</a>
-        <a href="#market">Market</a>
+        <div class="nav-links">
+            <a href="#ana-sayfa">Anasayfa</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+            <a href="#kurallar">Kurallar</a>
+            <a href="#market">Market</a>
+            <a href="#" class="btn-giris">Giriş Yap ></a>
+        </div>
     </header>
 
     <section id="ana-sayfa" class="section">
-        <h1>WaterNetwork</h1>
-        <p>Kesintisiz, eğlenceli ve tamamen oyuncu odaklı bir Minecraft deneyimi çok yakında sizlerle!</p>
-        <div class="ip-kutusu">IP: play.waternetwork.com</div>
+        <h1>WaterNetwork'e Katılın!</h1>
+        <p>WaterNetwork, oyunculara en yüksek performansı ve en kaliteli oyun modlarını sunmak için kurulmuş yeni nesil bir Minecraft sunucusudur.</p>
+        
+        <div class="button-group">
+            <a href="#" class="btn-main btn-oyna">Şimdi Oyna</a>
+            <a href="#" class="btn-main btn-kayit">Kayıt Ol</a>
+        </div>
     </section>
 
     <section id="hakkimizda" class="section">
         <h2>Hakkımızda</h2>
-        <p>WaterNetwork, oyunculara en yüksek performansı ve en kaliteli oyun modlarını sunmak için kurulmuş yeni nesil bir Minecraft sunucu projesidir.</p>
+        <p>En iyi Minecraft deneyimini yaşatmak için buradayız.</p>
     </section>
 
-    <section id="kurallar" class="section">
-        <h2>Sunucu Kuralları</h2>
-        <p>1. Diğer oyunculara saygısızlık yapmak veya hakaret etmek kesinlikle yasaktır.<br>2. Oyun içi hile ve üçüncü parti yazılımlar ban sebebidir.<br>3. Sohbeti gereksiz doldurmak (spam) yasaktır.</p>
-    </section>
-
-    <section id="market" class="section">
-        <h2>VIP & Market</h2>
-        <p>Sunucumuzda ayrıcalık sahibi olmak ve bizi desteklemek için market sistemimiz çok yakında aktif olacaktır. Takipte kalan!</p>
-    </section>
-
-</body>
+    </body>
 </html>
