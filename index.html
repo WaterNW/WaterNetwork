@@ -8,27 +8,34 @@
         body { margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family: 'Segoe UI', sans-serif; }
         
         /* Üst Menü */
-        header { position: fixed; top: 0; width: 100%; background: rgba(0, 0, 0, 0.9); padding: 15px 0; display: flex; justify-content: center; z-index: 1000; border-bottom: 1px solid #222; }
-        .nav-container { display: flex; align-items: center; justify-content: center; gap: 30px; }
+        header { 
+            position: fixed; top: 0; width: 100%; background: rgba(0, 0, 0, 0.9); 
+            padding: 15px 0; display: flex; justify-content: center; align-items: center; 
+            z-index: 1000; border-bottom: 1px solid #222;
+        }
+        .nav-container { display: flex; align-items: center; justify-content: center; gap: 20px; }
         header a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; }
         header a:hover { color: #00a8ff; }
-        .btn-giris { background: #00a8ff; padding: 10px 25px; border-radius: 50px; color: white !important; font-weight: bold; margin-left: 20px; }
+        
+        /* Menü Butonları */
+        .btn-nav { padding: 8px 20px; border-radius: 50px; font-weight: bold; }
+        .btn-giris { background: #1a1a1a; border: 1px solid #333; }
+        .btn-kayit { background: #00a8ff; color: white !important; }
 
         /* Ana İçerik */
         .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         h1 { font-size: 3.5rem; margin-bottom: 15px; }
-        .button-group { margin-top: 25px; display: flex; gap: 15px; }
         
-        /* Butonlar */
+        .button-group { margin-top: 25px; display: flex; gap: 15px; }
         .btn-main { padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; transition: 0.3s; }
         .btn-oyna { background: #00a8ff; color: #fff; }
-        .btn-kayit { background: #1a1a1a; color: #fff; border: 1px solid #333; }
         .btn-main:hover { transform: scale(1.05); opacity: 0.9; }
 
         #copy-notification { display: none; position: fixed; top: 100px; left: 50%; transform: translateX(-50%); background: #00a8ff; color: white; padding: 15px 30px; border-radius: 50px; font-weight: bold; z-index: 9999; }
     </style>
 </head>
 <body>
+
     <div id="copy-notification">IP kopyalandı!</div>
 
     <header>
@@ -37,7 +44,8 @@
             <a href="#hakkimizda">Hakkımızda</a>
             <a href="#kurallar">Kurallar</a>
             <a href="#market">Market</a>
-            <a href="register.html" class="btn-giris">Giriş Yap</a>
+            <a href="login.html" class="btn-nav btn-giris">Giriş Yap</a>
+            <a href="register.html" class="btn-nav btn-kayit">Kayıt Ol</a>
         </div>
     </header>
 
@@ -46,7 +54,6 @@
         <p>WaterNetwork, oyunculara en yüksek performansı sunar.</p>
         <div class="button-group">
             <button class="btn-main btn-oyna" onclick="ipKopyala()">Şimdi Oyna</button>
-            <a href="register.html" class="btn-main btn-kayit">Kayıt Ol</a>
         </div>
     </section>
 
