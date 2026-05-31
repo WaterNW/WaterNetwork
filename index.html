@@ -5,127 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaterNetwork | Minecraft Sunucusu</title>
     <style>
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-
-        /* Üst Menü */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 20px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid #222;
-        }
-        .nav-links { display: flex; align-items: center; }
-        header a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        header a:hover { color: #00a8ff; }
+        body { margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family: sans-serif; }
         
-        .btn-giris {
-            background: #00a8ff;
-            padding: 10px 25px;
-            border-radius: 5px;
-            color: white !important;
-            font-weight: bold;
-            margin-left: 30px !important;
-        }
-
-        /* Ana Bölüm */
-        .section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 { font-size: 4rem; margin-bottom: 10px; }
-        p { font-size: 1.3rem; max-width: 600px; color: #b0b0b0; }
-
-        /* Buton Grubu */
-        .button-group { margin-top: 30px; display: flex; gap: 15px; }
-        .btn-main {
-            padding: 15px 40px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-        .btn-oyna { background: #00a8ff; color: #fff; }
-        .btn-kayit { background: #1a1a1a; color: #fff; border: 1px solid #333; }
-        .btn-main:hover { opacity: 0.8; transform: scale(1.05); }
-
-        /* Bildirim Kutusu */
+        /* Bildirim Kutusu Stili */
         #copy-notification {
             display: none;
             position: fixed;
-            top: 100px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: #00a8ff;
+            background-color: #00a8ff;
             color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
+            padding: 15px 25px;
+            border-radius: 8px;
             font-weight: bold;
-            z-index: 2000;
-            box-shadow: 0 0 20px rgba(0, 168, 255, 0.5);
+            z-index: 9999;
+            box-shadow: 0 4px 10px rgba(0, 168, 255, 0.3);
+            text-align: center;
         }
+
+        .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .btn-oyna { background: #00a8ff; padding: 15px 40px; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 18px; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div id="copy-notification">IP kopyalandı!</div>
 
-    <header>
-        <div class="nav-links">
-            <a href="#ana-sayfa">Anasayfa</a>
-            <a href="#hakkimizda">Hakkımızda</a>
-            <a href="#kurallar">Kurallar</a>
-            <a href="#market">Market</a>
-            <a href="#" class="btn-giris">Giriş Yap ></a>
-        </div>
-    </header>
-
-    <section id="ana-sayfa" class="section">
-        <h1>WaterNetwork'e Katılın!</h1>
-        <p>WaterNetwork, oyunculara en yüksek performansı ve en kaliteli oyun modlarını sunmak için kurulmuş yeni nesil bir Minecraft sunucusudur.</p>
-        
-        <div class="button-group">
-            <button class="btn-main btn-oyna" onclick="ipKopyala()">Şimdi Oyna</button>
-            <a href="#" class="btn-main btn-kayit">Kayıt Ol</a>
-        </div>
+    <section class="section">
+        <h1>WaterNetwork</h1>
+        <button class="btn-oyna" onclick="ipKopyala()">Şimdi Oyna</button>
     </section>
 
     <script>
         function ipKopyala() {
-            const ipAdresi = "play.waternetwork.com";
-            navigator.clipboard.writeText(ipAdresi).then(() => {
+            const ip = "play.waternetwork.com";
+            
+            // Kopyalama işlemi
+            navigator.clipboard.writeText(ip).then(() => {
                 const bildirim = document.getElementById("copy-notification");
+                
+                // Görünür yap
                 bildirim.style.display = "block";
+                
+                // 2 saniye sonra gizle
                 setTimeout(() => {
                     bildirim.style.display = "none";
                 }, 2000);
+            }).catch(err => {
+                console.error('Kopyalama hatası: ', err);
             });
         }
     </script>
