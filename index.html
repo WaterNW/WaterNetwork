@@ -62,3 +62,57 @@
     </section>
 
     <script>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol | WaterNetwork</title>
+    <style>
+        body { margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; }
+
+        /* Sol Taraf: Form */
+        .left-panel { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 50px; }
+        h1 { color: #00a8ff; margin-bottom: 5px; }
+        .input-group { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        input { 
+            padding: 15px; border-radius: 5px; border: 1px solid #333; 
+            background: #111; color: white; width: 100%; box-sizing: border-box;
+        }
+        .btn-register { 
+            background: #00a8ff; color: white; border: none; padding: 15px; 
+            border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px;
+        }
+
+        /* Sağ Taraf: Logo/Marka Alanı */
+        .right-panel { 
+            flex: 1; background: #050505; display: flex; 
+            flex-direction: column; justify-content: center; align-items: center;
+        }
+        .logo-placeholder { font-size: 3rem; font-weight: bold; color: #00a8ff; }
+        
+        @media (max-width: 768px) { body { flex-direction: column; } }
+    </style>
+</head>
+<body>
+
+    <div class="left-panel">
+        <h1>KAYIT OL</h1>
+        <p>Sunucumuza katılmak için kayıt ol.</p>
+        
+        <div class="input-group">
+            <input type="text" placeholder="Kullanıcı Adı">
+            <input type="email" placeholder="E-Posta">
+            <input type="password" placeholder="Şifre">
+            <input type="password" placeholder="Şifre (Tekrar)">
+            <button class="btn-register">Kayıt Ol</button>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem;">Zaten hesabın var mı? <a href="#" style="color:#00a8ff">Giriş Yap</a></p>
+    </div>
+
+    <div class="right-panel">
+        <div class="logo-placeholder">WaterNetwork</div>
+    </div>
+
+</body>
+</html>
