@@ -5,44 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaterNetwork | Minecraft Sunucusu</title>
     <style>
-        body { 
-            margin: 0; padding: 0; background-color: #000000; 
-            color: #ffffff; font-family: 'Segoe UI', sans-serif;
-            animation: fadeIn 1.5s ease-in; /* Sayfa giriş animasyonu */
-        }
+        body { margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family: sans-serif; }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
+        /* Bildirim Kutusu Stili */
         #copy-notification {
             display: none;
-            position: fixed; top: 20px; left: 50%;
+            position: fixed;
+            top: 20px;
+            left: 50%;
             transform: translateX(-50%);
-            background-color: #00a8ff; color: white;
-            padding: 15px 25px; border-radius: 8px;
-            font-weight: bold; z-index: 9999;
-            box-shadow: 0 4px 15px rgba(0, 168, 255, 0.5);
-            transition: opacity 0.5s;
+            background-color: #00a8ff;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 9999;
+            box-shadow: 0 4px 10px rgba(0, 168, 255, 0.3);
+            text-align: center;
         }
 
-        .section { 
-            height: 100vh; display: flex; flex-direction: column; 
-            justify-content: center; align-items: center; 
-        }
-
-        .btn-oyna { 
-            background: #00a8ff; padding: 15px 40px; color: white; 
-            border: none; border-radius: 5px; cursor: pointer; 
-            font-size: 18px; font-weight: bold;
-            transition: transform 0.3s, background 0.3s; /* Buton geçişleri */
-        }
-
-        .btn-oyna:hover { 
-            transform: scale(1.1); /* Hover olduğunda büyüme */
-            background: #0088cc; 
-        }
+        .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .btn-oyna { background: #00a8ff; padding: 15px 40px; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 18px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -57,14 +40,20 @@
     <script>
         function ipKopyala() {
             const ip = "play.waternetwork.com";
+            
+            // Kopyalama işlemi
             navigator.clipboard.writeText(ip).then(() => {
                 const bildirim = document.getElementById("copy-notification");
+                
+                // Görünür yap
                 bildirim.style.display = "block";
                 
-                // Bildirimin yavaşça kaybolması için biraz bekleyelim
+                // 2 saniye sonra gizle
                 setTimeout(() => {
                     bildirim.style.display = "none";
                 }, 2000);
+            }).catch(err => {
+                console.error('Kopyalama hatası: ', err);
             });
         }
     </script>
