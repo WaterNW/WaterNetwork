@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaterNetwork | Oyna</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body { margin: 0; background: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; }
+        
+        /* Üst Menü */
+        header { padding: 20px; display: flex; justify-content: center; gap: 20px; border-bottom: 1px solid #222; }
+        header a { color: #fff; text-decoration: none; font-weight: bold; }
 
-        body { margin: 0; background: #050505; color: #fff; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        /* Ana İçerik */
+        .container { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 80vh; text-align: center; }
+        h1 { font-size: 3rem; margin-bottom: 20px; }
 
-        /* Buton Stili */
+        /* Oyna Butonu */
         .btn-oyna { 
             padding: 20px 60px; font-size: 1.5rem; background: #00a8ff; border: none; 
             border-radius: 50px; color: white; font-weight: bold; cursor: pointer;
@@ -19,18 +25,26 @@
 
         /* Animasyonlu Bildirim */
         #copy-notification { 
-            position: fixed; bottom: -100px; /* Başlangıçta gizli */
+            position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%);
             background: #00a8ff; color: white; padding: 15px 30px; 
             border-radius: 10px; font-weight: bold;
-            transition: all 0.5s ease; /* Yumuşak hareket */
-            opacity: 0;
+            transition: all 0.5s ease; opacity: 0;
         }
         .show { bottom: 50px !important; opacity: 1 !important; }
     </style>
 </head>
 <body>
 
-    <button class="btn-oyna" onclick="ipKopyala()">OYNA</button>
+    <header>
+        <a href="#">Anasayfa</a>
+        <a href="#">Hakkımızda</a>
+        <a href="#">Kurallar</a>
+    </header>
+
+    <div class="container">
+        <h1>WaterNetwork'e Hoş Geldin</h1>
+        <button class="btn-oyna" onclick="ipKopyala()">OYNA</button>
+    </div>
 
     <div id="copy-notification">IP ADRESİ KOPYALANDI!</div>
 
@@ -38,14 +52,8 @@
         function ipKopyala() {
             navigator.clipboard.writeText("play.waternetwork.com").then(() => {
                 const bildirim = document.getElementById("copy-notification");
-                
-                // Animasyonu tetikle
                 bildirim.classList.add("show");
-                
-                // 2 saniye sonra geri gönder ve gizle
-                setTimeout(() => {
-                    bildirim.classList.remove("show");
-                }, 2000);
+                setTimeout(() => { bildirim.classList.remove("show"); }, 2000);
             });
         }
     </script>
