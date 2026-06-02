@@ -40,7 +40,7 @@
         }
 
         .logo img {
-            height: 50px; /* Logona göre ayarlayabilirsin */
+            height: 50px; 
             object-fit: contain;
         }
 
@@ -61,6 +61,16 @@
         nav ul li a:hover {
             color: #00a2ff;
             text-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+        }
+
+        /* Giriş Yap Butonu için Özel Vurgu (İsteğe Bağlı) */
+        .login-link {
+            color: #00ffcc !important;
+        }
+        
+        .login-link:hover {
+            color: #00a2ff !important;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5) !important;
         }
 
         /* Hero (Ana) Bölüm */
@@ -130,13 +140,13 @@
 
     <header>
         <div class="logo">
-            <!-- İndirdiğin logoyu buraya ekleyebilirsin -->
             <img src="WaterNWLogo.png" alt="WaterNetwork Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="#">Anasayfa</a></li>
+                <li><a href="index.html">Anasayfa</a></li>
                 <li><a href="register.html">Kayıt Ol</a></li>
+                <li><a href="login.html" class="login-link">Giriş Yap</a></li>
                 <li><a href="#">Hakkımızda</a></li>
                 <li><a href="#">Kurallar</a></li>
             </ul>
