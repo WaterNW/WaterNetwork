@@ -3,161 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaterNetwork | Oyna</title>
-    <!-- Modern bir yazı tipi ekliyoruz -->
+    <title>Kayıt Ol | WaterNetwork</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Genel Ayarlar */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: radial-gradient(circle at center, #111a2e 0%, #070b12 100%);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { 
+            background-color: #070b12; 
+            color: #fff; 
+            min-height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
             overflow-x: hidden;
+            background: radial-gradient(circle at center, #111a2e 0%, #070b12 100%);
         }
-
-        /* Navigasyon Barı */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(7, 11, 18, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 162, 255, 0.1);
+        body::before { 
+            content: ''; 
+            position: absolute; 
+            width: 500px; 
+            height: 500px; 
+            background: rgba(0, 162, 255, 0.05); 
+            border-radius: 50%; 
+            filter: blur(120px); 
+            z-index: 1;
         }
-
-        .logo img {
-            height: 50px; 
-            object-fit: contain;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: #b0b8c4;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #00a2ff;
-            text-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
-        }
-
-        /* Giriş Yap Butonu için Özel Vurgu (İsteğe Bağlı) */
-        .login-link {
-            color: #00ffcc !important;
-        }
-        
-        .login-link:hover {
-            color: #00a2ff !important;
-            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5) !important;
-        }
-
-        /* Hero (Ana) Bölüm */
-        .hero {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .form-container { 
+            background: #0b111e; 
+            max-width: 460px; 
+            width: 90%; 
+            padding: 40px; 
+            border-radius: 24px; 
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); 
+            border: 1px solid rgba(0, 162, 255, 0.1); 
             text-align: center;
-            padding: 0 20px;
-            margin-top: 80px;
+            z-index: 2;
         }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, #fff 0%, #00a2ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeIn 1s ease-out;
+        .brand-header {
+            margin-bottom: 30px;
         }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #8a99ad;
-            margin-bottom: 40px;
-            max-width: 600px;
+        .brand-logo { 
+            max-width: 110px; 
+            margin-bottom: 15px; 
+            animation: floatAnimation 4s ease-in-out infinite; 
         }
-
-        /* Modern Oyna Butonu */
-        .play-btn {
-            display: inline-block;
-            padding: 16px 45px;
-            font-size: 18px;
-            font-weight: 600;
-            color: #fff;
-            background: linear-gradient(135deg, #0077ff 0%, #00a2ff 100%);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(0, 119, 255, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        .brand-header h1 { 
+            font-size: 2.2rem; 
+            font-weight: 800; 
+            letter-spacing: 1px; 
+            background: linear-gradient(135deg, #00a2ff 0%, #00ffcc 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            filter: drop-shadow(0 0 20px rgba(0, 162, 255, 0.2)); 
         }
-
-        .play-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 162, 255, 0.6);
-            background: linear-gradient(135deg, #00a2ff 0%, #00d2ff 100%);
-        }
-
-        .play-btn:active {
-            transform: translateY(-1px);
-        }
-
-        /* Animasyonlar */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .form-container h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; color: #fff; }
+        .form-container p { color: #8a99ad; font-size: 0.9rem; margin-bottom: 30px; }
+        .input-group { margin-bottom: 18px; text-align: left; }
+        .input-group input { width: 100%; padding: 15px 20px; background: #121b2d; border: 2px solid #1e2d4a; border-radius: 12px; color: #fff; font-size: 0.95rem; outline: none; transition: all 0.3s ease; }
+        .input-group input:focus { border-color: #00a2ff; box-shadow: 0 0 15px rgba(0, 162, 255, 0.25); background: #162238; }
+        .input-group input::placeholder { color: #52637a; }
+        .reg-btn { width: 100%; padding: 15px; background: linear-gradient(135deg, #0077ff 0%, #00a2ff 100%); border: none; border-radius: 12px; color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 119, 255, 0.3); transition: all 0.3s ease; margin-top: 5px; }
+        .reg-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 162, 255, 0.5); background: linear-gradient(135deg, #00a2ff 0%, #00d2ff 100%); }
+        .form-footer { margin-top: 25px; font-size: 0.9rem; color: #8a99ad; }
+        .form-footer a { color: #00a2ff; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        .form-footer a:hover { color: #00d2ff; text-shadow: 0 0 8px rgba(0, 162, 255, 0.4); }
+        .back-to-home { display: inline-block; margin-top: 25px; color: #52637a; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.3s ease; }
+        .back-to-home:hover { color: #00a2ff; }
+        @keyframes floatAnimation { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo">
-            <img src="WaterNWLogo.png" alt="WaterNetwork Logo">
+    <div class="form-container">
+        <div class="brand-header">
+            <img src="WaterNWlogo.png" alt="WaterNetwork" class="brand-logo">
+            <h1>WaterNetwork</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Anasayfa</a></li>
-                <li><a href="register.html">Kayıt Ol</a></li>
-                <li><a href="login.html" class="login-link">Giriş Yap</a></li>
-                <li><a href="#">Hakkımızda</a></li>
-                <li><a href="#">Kurallar</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="hero">
-        <h1>WaterNetwork'e Hoş Geldin</h1>
-        <p>Türkiye'nin en dinamik ve eğlenceli Minecraft sunucu deneyimine hazır mısın? Hemen topluluğumuza katıl!</p>
-        <a href="#" class="play-btn">ŞİMDİ OYNA</a>
+        <h2>Kayıt Ol</h2>
+        <p>Sunucumuza katılmak için hemen bir hesap oluştur.</p>
+        <form action="#" method="POST">
+            <div class="input-group"><input type="text" placeholder="Kullanıcı Adı" required></div>
+            <div class="input-group"><input type="email" placeholder="E-Posta Adresi" required></div>
+            <div class="input-group"><input type="password" placeholder="Şifre" required></div>
+            <div class="input-group"><input type="password" placeholder="Şifre (Tekrar)" required></div>
+            <button type="submit" class="reg-btn">Kayıt Ol</button>
+        </form>
+        <div class="form-footer">
+            Zaten hesabın var mı? <a href="login.html">Giriş Yap</a>
+        </div>
+        <a href="index.html" class="back-to-home">← Ana Sayfaya Dön</a>
     </div>
-
 </body>
 </html>
