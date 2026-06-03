@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Yap</title>
+    <title>Giriş Yap | WaterNetwork</title>
     <style>
         * {
             margin: 0;
@@ -13,35 +13,42 @@
         }
 
         body {
-            background-color: #0d131a; /* Görseldeki koyu arka plan */
+            background-color: #0d131a;
             color: #ffffff;
             display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            padding: 20px;
         }
 
-        .login-container {
+        /* İkiye bölünen ekran düzeni */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Sol Taraf: Form Alanı */
+        .form-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            background-color: #0d131a;
+        }
+
+        .form-container {
             width: 100%;
             max-width: 400px;
-            text-align: center;
         }
 
         .header-section {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .header-section h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 10px;
-        }
-
-        /* Görseldeki turkuaz/yeşil tonundaki "Hoş Geldin" vurgusu */
-        .header-section h1 span {
-            color: #3fe2b7; 
         }
 
         .header-section p {
@@ -51,91 +58,154 @@
 
         .form-group {
             margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #a0aec0;
-            font-size: 0.9rem;
         }
 
         .form-group input {
             width: 100%;
-            padding: 14px;
-            background-color: #1a2330;
-            border: 1px solid #2d3748;
-            border-radius: 8px;
+            padding: 16px;
+            background-color: #161f2c;
+            border: 1px solid #233044;
+            border-radius: 12px;
             color: #fff;
-            font-size: 1rem;
+            font-size: 0.95rem;
             outline: none;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .form-group input:focus {
-            border-color: #3fe2b7;
+            border-color: #0096ff;
+            box-shadow: 0 0 10px rgba(0, 150, 255, 0.2);
         }
 
+        /* Register sayfasındaki mavi buton rengi */
         .login-btn {
             width: 100%;
-            padding: 14px;
-            background-color: #3fe2b7;
-            color: #0d131a;
+            padding: 16px;
+            background-color: #0096ff;
+            color: #ffffff;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: opacity 0.2s;
+            transition: background-color 0.2s, box-shadow 0.2s;
             margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(0, 150, 255, 0.3);
         }
 
         .login-btn:hover {
-            opacity: 0.9;
+            background-color: #0082e6;
         }
 
         .footer-links {
             margin-top: 25px;
             font-size: 0.9rem;
+            color: #707e94;
         }
 
         .footer-links a {
-            color: #3fe2b7;
+            color: #0096ff;
             text-decoration: none;
+            font-weight: 600;
         }
 
         .footer-links a:hover {
             text-decoration: underline;
         }
+
+        .back-home {
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .back-home a {
+            color: #52637a;
+            text-decoration: none;
+        }
+
+        /* Sağ Taraf: Logo ve Görsel Alanı */
+        .image-side {
+            flex: 1;
+            background: radial-gradient(circle at center, #101f33 0%, #080d14 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-left: 1px solid #162235;
+        }
+
+        .logo-box {
+            text-align: center;
+        }
+
+        .logo-box img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Register sayasındaki WaterNetwork marka yazısı stili */
+        .brand-name {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #00dfa2; /* Logodaki yeşil tonu */
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, #00c6ff, #00dfa2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Mobil cihazlarda sağ tarafı gizle (Tıpkı register sayfasındaki gibi) */
+        @media (max-width: 900px) {
+            .image-side {
+                display: none;
+            }
+            .form-side {
+                padding: 0 5%;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="login-container">
-        <!-- Görseldeki Başlık Alanı -->
-        <div class="header-section">
-            <h1>Tekrar <span>Hoş Geldin</span></h1>
-            <p>Maceraya kaldığın yerden devam etmek için giriş yap.</p>
+    <div class="container">
+        <!-- Sol Taraf (Form) -->
+        <div class="form-side">
+            <div class="form-container">
+                <div class="header-section">
+                    <h1>Tekrar Hoş Geldin</h1>
+                    <p>Sunucumuza katılmak için hemen giriş yap.</p>
+                </div>
+
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" placeholder="Kullanıcı Adı veya E-Posta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Şifre" required>
+                    </div>
+
+                    <button type="submit" class="login-btn">Giriş Yap</button>
+                </form>
+
+                <div class="footer-links">
+                    <p>Zaten hesabın var mı? <a href="register.html">Kayıt Ol</a></p>
+                </div>
+
+                <div class="back-home">
+                    <a href="index.html">← Ana Sayfaya Dön</a>
+                </div>
+            </div>
         </div>
 
-        <!-- Eklenen Giriş Formu Elemanları -->
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="username">Kullanıcı Adı veya E-posta</label>
-                <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı girin" required>
+        <!-- Sağ Taraf (WaterNetwork Logo Alanı) -->
+        <div class="image-side">
+            <div class="logo-box">
+                <!-- Klasöründeki logonun ismi WaterNWlogo.png olduğu için buraya tam adını ekledim -->
+                <img src="WaterNWlogo.png" alt="WaterNetwork Logo">
+                <div class="brand-name">WaterNetwork</div>
             </div>
-
-            <div class="form-group">
-                <label for="password">Şifre</label>
-                <input type="password" id="password" name="password" placeholder="••••••••" required>
-            </div>
-
-            <button type="submit" class="login-btn">Giriş Yap</button>
-        </form>
-
-        <div class="footer-links">
-            <p>Hesabın yok mu? <a href="register.html">Kayıt Ol</a></p>
         </div>
     </div>
 
