@@ -6,161 +6,55 @@
     <title>Kayıt Ol | WaterNetwork</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: #070b12;
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            overflow-x: hidden;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        .form-section {
-            flex: 1;
-            background: #0b111e;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
-            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.4);
-            z-index: 2;
-            border-right: 1px solid rgba(0, 162, 255, 0.1);
-        }
-
-        .form-box {
-            max-width: 420px;
-            width: 100%;
-        }
-
-        .form-box h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, #fff 0%, #00a2ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .form-box p {
-            color: #8a99ad;
-            font-size: 0.95rem;
-            margin-bottom: 35px;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 16px 20px;
-            background: #121b2d;
-            border: 2px solid #1e2d4a;
-            border-radius: 12px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .input-group input:focus {
-            border-color: #00a2ff;
-            box-shadow: 0 0 15px rgba(0, 162, 255, 0.25);
-            background: #162238;
-        }
-
-        .input-group input::placeholder {
-            color: #52637a;
-        }
-
-        .reg-btn {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #0077ff 0%, #00a2ff 100%);
-            border: none;
-            border-radius: 12px;
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(0, 119, 255, 0.3);
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .reg-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 162, 255, 0.5);
-            background: linear-gradient(135deg, #00a2ff 0%, #00d2ff 100%);
-        }
-
-        .form-footer {
-            margin-top: 25px;
-            font-size: 0.9rem;
-            color: #8a99ad;
-        }
-
-        .form-footer a {
-            color: #00a2ff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .form-footer a:hover {
-            color: #00d2ff;
-            text-shadow: 0 0 8px rgba(0, 162, 255, 0.4);
-        }
-
-        .back-to-home {
-            display: inline-block;
-            margin-top: 35px;
-            color: #52637a;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .back-to-home:hover {
-            color: #00a2ff;
-        }
-
-        .brand-section {
-            flex: 1.3;
-            background: radial-gradient(circle at center, #111a2e 0%, #070b12 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 40px;
-        }
-
-        .brand-logo {
-            max-width: 160px;
-            margin-bottom: 20px;
-            animation: floatAnimation 4s ease-in-out infinite;
-        }
-
-        .brand-section h1 {
-            font-size: 4.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, #00a2ff 0%, #00ffcc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 30
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #070b12; color: #fff; min-height: 100vh; display: flex; overflow-x: hidden; }
+        .container { display: flex; width: 100%; min-height: 100vh; }
+        .form-section { flex: 1; background: #0b111e; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; box-shadow: 10px 0 30px rgba(0, 0, 0, 0.4); z-index: 2; border-right: 1px solid rgba(0, 162, 255, 0.1); }
+        .form-box { max-width: 420px; width: 100%; }
+        .form-box h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: 1px; background: linear-gradient(135deg, #fff 0%, #00a2ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .form-box p { color: #8a99ad; font-size: 0.95rem; margin-bottom: 35px; }
+        .input-group { margin-bottom: 20px; }
+        .input-group input { width: 100%; padding: 16px 20px; background: #121b2d; border: 2px solid #1e2d4a; border-radius: 12px; color: #fff; font-size: 0.95rem; outline: none; transition: all 0.3s ease; }
+        .input-group input:focus { border-color: #00a2ff; box-shadow: 0 0 15px rgba(0, 162, 255, 0.25); background: #162238; }
+        .input-group input::placeholder { color: #52637a; }
+        .reg-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #0077ff 0%, #00a2ff 100%); border: none; border-radius: 12px; color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 119, 255, 0.3); transition: all 0.3s ease; margin-top: 10px; }
+        .reg-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 162, 255, 0.5); background: linear-gradient(135deg, #00a2ff 0%, #00d2ff 100%); }
+        .form-footer { margin-top: 25px; font-size: 0.9rem; color: #8a99ad; }
+        .form-footer a { color: #00a2ff; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        .form-footer a:hover { color: #00d2ff; text-shadow: 0 0 8px rgba(0, 162, 255, 0.4); }
+        .back-to-home { display: inline-block; margin-top: 35px; color: #52637a; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.3s ease; }
+        .back-to-home:hover { color: #00a2ff; }
+        .brand-section { flex: 1.3; background: radial-gradient(circle at center, #111a2e 0%, #070b12 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 40px; }
+        .brand-logo { max-width: 160px; margin-bottom: 20px; animation: floatAnimation 4s ease-in-out infinite; }
+        .brand-section h1 { font-size: 4.5rem; font-weight: 800; letter-spacing: 2px; background: linear-gradient(135deg, #00a2ff 0%, #00ffcc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 30px rgba(0, 162, 255, 0.3)); }
+        .brand-section::before { content: ''; position: absolute; width: 350px; height: 350px; background: rgba(0, 162, 255, 0.06); border-radius: 50%; filter: blur(90px); }
+        @keyframes floatAnimation { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @media (max-width: 900px) { .brand-section { display: none; } .form-section { padding: 0 8%; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <div class="form-box">
+                <h2>Kayıt Ol</h2>
+                <p>Sunucumuza katılmak için hemen bir hesap oluştur.</p>
+                <form action="#" method="POST">
+                    <div class="input-group"><input type="text" placeholder="Kullanıcı Adı" required></div>
+                    <div class="input-group"><input type="email" placeholder="E-Posta Adresi" required></div>
+                    <div class="input-group"><input type="password" placeholder="Şifre" required></div>
+                    <div class="input-group"><input type="password" placeholder="Şifre (Tekrar)" required></div>
+                    <button type="submit" class="reg-btn">Kayıt Ol</button>
+                </form>
+                <div class="form-footer">
+                    Zaten hesabın var mı? <a href="login.html">Giriş Yap</a>
+                </div>
+                <a href="index.html" class="back-to-home">← Ana Sayfaya Dön</a>
+            </div>
+        </div>
+        <div class="brand-section">
+            <img src="WaterNWlogo.png" alt="WaterNetwork" class="brand-logo">
+            <h1>WaterNetwork</h1>
+        </div>
+    </div>
+</body>
+</html>
